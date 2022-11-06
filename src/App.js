@@ -24,15 +24,18 @@ import { Provider } from 'react-redux';
 // Dont mutate the state - redux buit on immutability (copy)
 
 // initial store  which contain all the data
-const initialStore = {
-    cart: cartItems,
-    total: 105,
-    amount: 6,
-};
+// const initialStore = {
+//     cart: cartItems,
+//     total: 105,
+//     amount: 6,
+// };
 
 // reducer  , this function will contain all the action( which cointains logic ) and return updated or initial state
 
-const store = createStore(reducer, initialStore);
+const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 function App() {
     // cart setu
